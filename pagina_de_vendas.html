@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abri Meu Negócio. Cadê os Clientes? | E-book Vol. 02</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .highlight {
+            color: #d1ff27;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: radial-gradient(circle at top right, #1a1a1a, #000000);
+            border-bottom: 2px solid #333;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #cccccc;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #aaaaaa;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #d1ff27;
+            color: #000;
+            padding: 18px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #b8e61a;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            filter: drop-shadow(0 20px 30px rgba(209, 255, 39, 0.15));
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #121212;
+        }
+
+        .problem-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-section p {
+            font-size: 1.1rem;
+            color: #bbbbbb;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+        }
+
+        .benefits-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            transition: border-color 0.3s;
+        }
+
+        .benefit-card:hover {
+            border-color: #d1ff27;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #d1ff27;
+        }
+
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: #aaaaaa;
+        }
+
+        /* Checklist / CTA Section */
+        .checklist-section {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #121212, #000000);
+        }
+
+        .checklist-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .checklist-section p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+
+        .author-info {
+            margin-bottom: 50px;
+        }
+
+        .checkout-box {
+            background-color: #1a1a1a;
+            padding: 50px 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid #d1ff27;
+        }
+
+        .checkout-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .security-note {
+            font-size: 0.85rem !important;
+            color: #888888 !important;
+            margin-top: 20px !important;
+            margin-bottom: 0 !important;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(209, 255, 39, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(209, 255, 39, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(209, 255, 39, 0); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #050505;
+            color: #555555;
+            font-size: 0.9rem;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">Relatos de Empreendedor Vol. 02</span>
+                <h1>ABRI MEU NEGÓCIO.<br><span class="highlight">CADÊ OS CLIENTES?</span></h1>
+                <p class="subtitle">O que aprendi tentando transformar atenção em vendas.</p>
+                <p class="description">Você saiu do marketplace, montou seu site próprio e descobriu que anunciar não é simplesmente apertar um botão de vendas. Descubra como diagnosticar gargalos e parar de perder dinheiro com tráfego pago.</p>
+                <a href="#checkout" class="cta-button">Garantir Meu E-book Agora</a>
+            </div>
+            <div class="hero-image">
+                <!-- Imagem temporária online para garantir que veja o layout -->
+                <img src="https://via.placeholder.com/450x600/1a1a1a/d1ff27?text=COLOQUE+A+CAPA+AQUI" alt="Capa do Ebook">
+            </div>
+        </div>
+    </header>
+
+    <section class="problem-section">
+        <div class="container">
+            <h2>Gastar dinheiro em tráfego pago <span class="highlight">não é a solução.</span></h2>
+            <p>Se você acha que aumentar o orçamento vai corrigir a falta de vendas, cuidado: mais orçamento apenas amplifica o que já existe — inclusive os problemas. Neste livro, você entenderá que o marketing gera interesse, mas se a venda não acontece, o problema pode estar depois do clique.</p>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h2>O que você vai descobrir:</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Diagnóstico de Gargalos</h3>
+                    <p>Aprenda a identificar onde seu cliente está parando: é o anúncio, a página, a oferta ou o checkout? Pare de adivinhar.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Leitura de Métricas</h3>
+                    <p>Você não precisa amar planilhas. Precisa apenas aprender a fazer as perguntas certas aos números (CTR, CPC, CAC, ROAS).</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Preço vs. Valor</h3>
+                    <p>Entenda por que ser menor não significa que você precisa ser o mais barato. Pare de tentar vencer apenas pelo preço.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>A Jornada de Experiência</h3>
+                    <p>No e-commerce, você vende uma expectativa pela tela e entrega uma experiência pela caixa. Como criar o "efeito UAU".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checklist-section">
+        <div class="container">
+            <h2>O Checklist Definitivo</h2>
+            <p>Receba o checklist completo com as validações exatas que você deve fazer antes de colocar mais <strong>R$ 1 em anúncios.</strong></p>
+            
+            <div class="author-info">
+                <p><strong>Por Giuliano Baptista | GB Marketing</strong></p>
+            </div>
+
+            <div id="checkout" class="checkout-box">
+                <h3>Pronto para transformar sua operação?</h3>
+                <p>Baixe o Vol. 02 agora mesmo e ajuste seu funil de vendas hoje.</p>
+                <!-- Substitua o link "#" pelo link da Hotmart -->
+                <a href="#" class="cta-button pulse">Comprar Agora na Hotmart</a>
+                <p class="security-note">🔒 Compra 100% segura e acesso imediato.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 GB Marketing. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
